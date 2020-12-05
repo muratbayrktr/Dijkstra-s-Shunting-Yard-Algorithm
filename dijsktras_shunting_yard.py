@@ -123,8 +123,6 @@ def operator_check(element):
 def assoc_precedence_check(element):
     if stack[-1] == "(" or ((operator_assoc[element] == 0) and (operator_dict[element] <= operator_dict[stack[-1]])): return True
     elif stack[-1] == "(" or ((operator_assoc[element]==1) and (operator_dict[element] < operator_dict[stack[-1]])): return True
-    elif ((operator_assoc[element] == 0) and (operator_dict[element] > operator_dict[stack[-1]])): return False
-    elif ((operator_assoc[element] == 1) and (operator_dict[element] > operator_dict[stack[-1]])): return False
     else: return False
 
 
