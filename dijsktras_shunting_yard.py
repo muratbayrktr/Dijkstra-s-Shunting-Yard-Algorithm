@@ -2,7 +2,30 @@
 # TODO 2 : write the parenthesis handling function
 # TODO 3 : write the operator check function
 # TODO 4 : write the operator precedence check function
-
+# ------------------------------------------------------
+# Yazar/Author : Murat Bayraktar
+# Tarih/Date   : 2020-12-5
+# 
+# Tanım        : 
+# Dijkstra'nın Shunting Yard algoritmasının programa 
+# dökülmüş halidir. Infix bir ifadeyi alarak ifadedeki
+# işlem önceliği karakter/işlem sınıflandırmasına dikkat
+# ederek ve sağdan-soldan işlenmeli olduğuna dikkat ederek
+# onu stack mantığını kullanarak postfix ifadeye dönüştürüyor.
+# sleep fonksiyonu da adımların daha iyi gözükebilmesi amacıyla
+# kullanılmıştır.
+# 
+# Description : 
+# Implementation of Dijkstra's Shunting 
+# yard algorithm. Programme takes an infix expression 
+# and turns it into postfix expression. It shows every 
+# step clearly for better comprehension.
+#
+# Parametreler/Parameters : stack,inital_expression,output_queue
+# Örnek / Example :
+#           infix = "A-B^C^D*(E-(F-G-H))/K"
+#         postifx = "ABCD^^EFG-H--*K/-"
+# ------------------------------------------------------
 """ 
 ----------------------- PSEUDOCODE ----------------------
 Get next token t from the input queue
