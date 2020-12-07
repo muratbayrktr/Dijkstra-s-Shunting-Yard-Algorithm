@@ -24,7 +24,7 @@
 # Parametreler/Parameters : stack,inital_expression,output_queue
 # Örnek / Example :
 #           infix = "A-B^C^D*(E-(F-G-H))/K"
-#         postifx = "ABCD^^EFG-H--*K/-"
+#         postfix = "ABCD^^EFG-H--*K/-"
 # ------------------------------------------------------
 """ 
 ----------------------- PSEUDOCODE ----------------------
@@ -81,16 +81,22 @@ operator_assoc = {"^": 1, # right
                   }
 # import time for slowing the demonstration of steps
 from time import sleep
+import sys
+
 # test cases are made without spaces 
 # however if we like to include cases with spaces
 # then we might need to add extre function in order to 
 # arrange the initial expression to meet our needs.
-test1 = "A*B+C-D"
-test2 = "A-B*(C-D-E)/F-G"
-test3 = "A-B^C^D*(E-(F-G-H))/K"
-test4 = "A^B-C/(D-E+(F*G^H))-L+M*N"
 
-initial_expression = test3
+if len(sys.argv) != 2:
+    sys.exit('usage: ./dijsktras_shunting_yard.py <infix_expression>')
+
+#test1 = "A*B+C-D"
+#test2 = "A-B*(C-D-E)/F-G"
+#test3 = "A-B^C^D*(E-(F-G-H))/K"
+#test4 = "A^B-C/(D-E+(F*G^H))-L+M*N"
+
+initial_expression = sys.argv[1].strip()
 stack = []
 output_queu = []
 
@@ -134,6 +140,10 @@ def empty_stack():
         temp = stack.pop()
         output_queu.append(temp)
 
+def print_repository():
+    print("stack:",stack)
+    print("output queu",output_queu)
+
 
 # main stream
 for element in initial_expression:
@@ -146,14 +156,12 @@ for element in initial_expression:
 
     
     # print the results at every 0.25 seconds
-    print("stack:",stack)
-    print("output queu",output_queu)
+    print_repository()
     sleep(0.25)
 
 # after the initial expression is dumped, empty the stack
 empty_stack()
 # print the final results
-print("stack:",stack)
-print("output queu",output_queu)
+print_repository()
 # print the postfix expression as text
 print("\nPostfix expression ","".join(output_queu))
