@@ -14,7 +14,7 @@ It can be changed such that it accepts input from the user and proceeds with tha
 -Murat Bayraktar
 Usage :
 
-./dijkstras_shunting_yard.py "<infix expression>" 
+./dijkstras_shunting_yard.py "\<infix expression\>" 
 
 it is better if you type it in double quotes since parenthesis may cause problem  
 
